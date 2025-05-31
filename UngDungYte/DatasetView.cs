@@ -13,6 +13,7 @@ namespace UngDungYte
 {
     public partial class DatasetView : UserControl
     {
+        public static DataTable dt;
         public DatasetView()
         {
             InitializeComponent();
@@ -24,10 +25,10 @@ namespace UngDungYte
 
         private void btnLoadFile_Click(object sender, EventArgs e)
         {
-            DataTable table = UIHelper.SelectCsvAndLoadToTable();
-            if (table != null)
+            dt = UIHelper.SelectCsvAndLoadToTable();
+            if (dt != null)
             {
-                dataGridView1.DataSource = table;
+                dataGridView1.DataSource = dt;
             }
         }
     }

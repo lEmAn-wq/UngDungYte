@@ -2,12 +2,17 @@
 {
     public partial class MainForm : Form
     {
+        DatasetView datasetView = new DatasetView();
+        PatientSegmentationView patientSegmentationView = new PatientSegmentationView();
+        AssociationRuleMiningView associationRuleMiningView = new AssociationRuleMiningView();
+        CreateDiagnosisModelView createDiagnosisModelView = new CreateDiagnosisModelView();
         public MainForm()
         {
             InitializeComponent();
         }
 
         #region Điều hướng
+        private Dictionary<string, UserControl> loadedViews = new Dictionary<string, UserControl>();
 
         private void fileCleaningToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -18,7 +23,7 @@
         private void datasetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             labelTieuDe.Text = "Bộ dữ liệu";
-            UIHelper.LoadUserControlToPanel(panel1, new DatasetView());
+            UIHelper.LoadUserControlToPanel(panel1, datasetView);
         }
 
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,7 +41,7 @@
         private void patientSegmentationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             labelTieuDe.Text = "Phân khúc dữ liệu y khoa – Chọn thuật toán && Đầu ra";
-            UIHelper.LoadUserControlToPanel(panel1, new PatientSegmentationView());
+            UIHelper.LoadUserControlToPanel(panel1, patientSegmentationView);
         }
 
         private void correlationAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,7 +53,7 @@
         private void associationRulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             labelTieuDe.Text = "Khai phá luật kết hợp – Từ dữ liệu đến luật";
-            UIHelper.LoadUserControlToPanel(panel1, new AssociationRuleMiningView());
+            UIHelper.LoadUserControlToPanel(panel1, associationRuleMiningView);
         }
 
         private void diagnosisSupportToolStripMenuItem_Click(object sender, EventArgs e)

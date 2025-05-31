@@ -43,14 +43,12 @@ namespace UngDungYte
         #endregion
 
         #region UI Controls
-
         public static void LoadUserControlToPanel(Panel panel, UserControl uc)
         {
             panel.Controls.Clear();
             uc.Dock = DockStyle.Fill;
             panel.Controls.Add(uc);
         }
-
         #endregion
 
         #region CSV Import
