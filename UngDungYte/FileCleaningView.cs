@@ -42,6 +42,8 @@ namespace UngDungYte
             UIHelper.ShowSaveFileDialogAndExportToCsv(dataGridView1);
         }
 
+        #region Sự kiện DataGridView (Xử lý xóa sửa và tô màu dòng)
+
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -169,6 +171,7 @@ namespace UngDungYte
 
             rightClickedRowIndex = -1;
         }
+      
         private void dataGridView1_RowContextMenuStripNeeded(object sender, DataGridViewRowContextMenuStripNeededEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -182,5 +185,7 @@ namespace UngDungYte
             else
                 e.ContextMenuStrip = null;
         }
+
+        #endregion
     }
 }

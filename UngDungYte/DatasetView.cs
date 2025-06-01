@@ -31,5 +31,10 @@ namespace UngDungYte
                 dataGridView1.DataSource = dt;
             }
         }
+
+        public static void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
