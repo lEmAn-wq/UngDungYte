@@ -28,145 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            TreeNode treeNode7 = new TreeNode("L1");
-            TreeNode treeNode8 = new TreeNode("L2");
-            TreeNode treeNode9 = new TreeNode("L3");
-            TreeNode treeNode4 = new TreeNode("L1");
-            TreeNode treeNode5 = new TreeNode("L2");
-            TreeNode treeNode6 = new TreeNode("L3");
-            groupBox2 = new GroupBox();
-            cboboxThuatToan = new ComboBox();
-            groupBox3 = new GroupBox();
-            checkListThuocTinh = new CheckedListBox();
             dgvRoiRacGiaTri = new DataGridView();
-            AttributeType = new DataGridViewTextBoxColumn();
-            GreaterThan = new DataGridViewTextBoxColumn();
-            RangeCategory = new DataGridViewTextBoxColumn();
-            LessThan = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             txtMinsup = new TextBox();
             groupBox4 = new GroupBox();
             txtMinconf = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            centeredGroupBoxTapPhoBien = new CenteredGroupBox();
-            btnLuu = new Button();
-            btnKetQua = new Button();
-            centeredGroupBoxTapLuat = new CenteredGroupBox();
-            treeView2 = new TreeView();
+            groupBox3 = new GroupBox();
+            dgvLKH = new DataGridView();
+            LKH = new DataGridViewTextBoxColumn();
+            Conf = new DataGridViewTextBoxColumn();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            groupBox5 = new GroupBox();
+            cboThuocTinh = new ComboBox();
+            groupBox6 = new GroupBox();
+            cboDieuKien = new ComboBox();
+            groupBox7 = new GroupBox();
+            txtGiaTri = new TextBox();
+            btnThem = new Button();
+            btnXoa = new Button();
+            btnThucThi = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            treeView1 = new TreeView();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            lblSoLuat = new Label();
+            lblSoLuatHopLe = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvRoiRacGiaTri).BeginInit();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            centeredGroupBoxTapPhoBien.SuspendLayout();
-            centeredGroupBoxTapLuat.SuspendLayout();
+            groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLKH).BeginInit();
+            flowLayoutPanel3.SuspendLayout();
+            groupBox5.SuspendLayout();
+            groupBox6.SuspendLayout();
+            groupBox7.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(cboboxThuatToan);
-            groupBox2.Location = new Point(20, 20);
-            groupBox2.Margin = new Padding(20);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(217, 55);
-            groupBox2.TabIndex = 3;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Lựa chọn thuật toán";
-            // 
-            // cboboxThuatToan
-            // 
-            cboboxThuatToan.Dock = DockStyle.Top;
-            cboboxThuatToan.FormattingEnabled = true;
-            cboboxThuatToan.Items.AddRange(new object[] { "Apriori" });
-            cboboxThuatToan.Location = new Point(3, 19);
-            cboboxThuatToan.Name = "cboboxThuatToan";
-            cboboxThuatToan.Size = new Size(211, 23);
-            cboboxThuatToan.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(checkListThuocTinh);
-            groupBox3.Dock = DockStyle.Left;
-            groupBox3.Location = new Point(3, 100);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(190, 202);
-            groupBox3.TabIndex = 4;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Lựa chọn thuộc tính áp dụng";
-            // 
-            // checkListThuocTinh
-            // 
-            checkListThuocTinh.Dock = DockStyle.Fill;
-            checkListThuocTinh.FormattingEnabled = true;
-            checkListThuocTinh.Items.AddRange(new object[] { "Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age" });
-            checkListThuocTinh.Location = new Point(3, 19);
-            checkListThuocTinh.Name = "checkListThuocTinh";
-            checkListThuocTinh.Size = new Size(184, 180);
-            checkListThuocTinh.TabIndex = 1;
             // 
             // dgvRoiRacGiaTri
             // 
             dgvRoiRacGiaTri.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRoiRacGiaTri.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRoiRacGiaTri.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRoiRacGiaTri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRoiRacGiaTri.Columns.AddRange(new DataGridViewColumn[] { AttributeType, GreaterThan, RangeCategory, LessThan });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvRoiRacGiaTri.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRoiRacGiaTri.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRoiRacGiaTri.Dock = DockStyle.Fill;
-            dgvRoiRacGiaTri.Location = new Point(340, 100);
+            dgvRoiRacGiaTri.Location = new Point(410, 72);
             dgvRoiRacGiaTri.Name = "dgvRoiRacGiaTri";
-            dgvRoiRacGiaTri.Size = new Size(501, 202);
+            dgvRoiRacGiaTri.ReadOnly = true;
+            dgvRoiRacGiaTri.Size = new Size(431, 182);
             dgvRoiRacGiaTri.TabIndex = 7;
-            // 
-            // AttributeType
-            // 
-            AttributeType.FillWeight = 40F;
-            AttributeType.HeaderText = "Loại thuộc tính";
-            AttributeType.Name = "AttributeType";
-            // 
-            // GreaterThan
-            // 
-            GreaterThan.FillWeight = 30F;
-            GreaterThan.HeaderText = "Lớn hơn";
-            GreaterThan.Name = "GreaterThan";
-            // 
-            // RangeCategory
-            // 
-            RangeCategory.FillWeight = 50F;
-            RangeCategory.HeaderText = "Giá trị trong khoảng";
-            RangeCategory.Name = "RangeCategory";
-            RangeCategory.Resizable = DataGridViewTriState.True;
-            // 
-            // LessThan
-            // 
-            LessThan.FillWeight = 30F;
-            LessThan.HeaderText = "Nhỏ hơn";
-            LessThan.Name = "LessThan";
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(txtMinsup);
-            groupBox1.Location = new Point(277, 20);
-            groupBox1.Margin = new Padding(20);
+            groupBox1.Location = new Point(20, 3);
+            groupBox1.Margin = new Padding(20, 3, 20, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(217, 55);
             groupBox1.TabIndex = 9;
@@ -185,8 +120,8 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(txtMinconf);
-            groupBox4.Location = new Point(534, 20);
-            groupBox4.Margin = new Padding(20);
+            groupBox4.Location = new Point(277, 3);
+            groupBox4.Margin = new Padding(20, 3, 20, 3);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(217, 55);
             groupBox4.TabIndex = 10;
@@ -205,109 +140,228 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-            tableLayoutPanel1.Controls.Add(centeredGroupBoxTapPhoBien, 0, 3);
-            tableLayoutPanel1.Controls.Add(btnLuu, 1, 2);
-            tableLayoutPanel1.Controls.Add(btnKetQua, 0, 2);
-            tableLayoutPanel1.Controls.Add(centeredGroupBoxTapLuat, 1, 3);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.2227478F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.7772522F));
+            tableLayoutPanel1.Controls.Add(groupBox3, 0, 3);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel3, 0, 1);
+            tableLayoutPanel1.Controls.Add(btnThucThi, 0, 2);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 0);
             tableLayoutPanel1.Controls.Add(dgvRoiRacGiaTri, 1, 1);
-            tableLayoutPanel1.Controls.Add(groupBox3, 0, 1);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel2, 1, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 97F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 208F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 69F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 188F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(844, 456);
             tableLayoutPanel1.TabIndex = 11;
             // 
-            // centeredGroupBoxTapPhoBien
+            // groupBox3
             // 
-            centeredGroupBoxTapPhoBien.Controls.Add(treeView1);
-            centeredGroupBoxTapPhoBien.Dock = DockStyle.Fill;
-            centeredGroupBoxTapPhoBien.Location = new Point(3, 343);
-            centeredGroupBoxTapPhoBien.Name = "centeredGroupBoxTapPhoBien";
-            centeredGroupBoxTapPhoBien.Size = new Size(331, 110);
-            centeredGroupBoxTapPhoBien.TabIndex = 15;
-            centeredGroupBoxTapPhoBien.TabStop = false;
-            centeredGroupBoxTapPhoBien.Text = "Tập phổ biến";
+            tableLayoutPanel1.SetColumnSpan(groupBox3, 2);
+            groupBox3.Controls.Add(dgvLKH);
+            groupBox3.Dock = DockStyle.Fill;
+            groupBox3.Location = new Point(20, 312);
+            groupBox3.Margin = new Padding(20);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(804, 124);
+            groupBox3.TabIndex = 19;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Kết quả";
             // 
-            // btnLuu
+            // dgvLKH
             // 
-            btnLuu.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnLuu.Location = new Point(718, 314);
-            btnLuu.Name = "btnLuu";
-            btnLuu.Size = new Size(123, 23);
-            btnLuu.TabIndex = 14;
-            btnLuu.Text = "Áp dụng hệ thống";
-            btnLuu.UseVisualStyleBackColor = true;
+            dgvLKH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvLKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvLKH.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLKH.Columns.AddRange(new DataGridViewColumn[] { LKH, Conf });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvLKH.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvLKH.Dock = DockStyle.Fill;
+            dgvLKH.Location = new Point(3, 19);
+            dgvLKH.Name = "dgvLKH";
+            dgvLKH.ReadOnly = true;
+            dgvLKH.Size = new Size(798, 102);
+            dgvLKH.TabIndex = 8;
             // 
-            // btnKetQua
+            // LKH
             // 
-            btnKetQua.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnKetQua.Location = new Point(3, 314);
-            btnKetQua.Name = "btnKetQua";
-            btnKetQua.Size = new Size(75, 23);
-            btnKetQua.TabIndex = 7;
-            btnKetQua.Text = "Kết quả";
-            btnKetQua.UseVisualStyleBackColor = true;
+            LKH.HeaderText = "Luật kết hợp";
+            LKH.Name = "LKH";
+            LKH.ReadOnly = true;
             // 
-            // centeredGroupBoxTapLuat
+            // Conf
             // 
-            centeredGroupBoxTapLuat.Controls.Add(treeView2);
-            centeredGroupBoxTapLuat.Dock = DockStyle.Fill;
-            centeredGroupBoxTapLuat.Location = new Point(340, 343);
-            centeredGroupBoxTapLuat.Name = "centeredGroupBoxTapLuat";
-            centeredGroupBoxTapLuat.Size = new Size(501, 110);
-            centeredGroupBoxTapLuat.TabIndex = 9;
-            centeredGroupBoxTapLuat.TabStop = false;
-            centeredGroupBoxTapLuat.Text = "Tập luật";
+            Conf.HeaderText = "Độ tin cậy";
+            Conf.Name = "Conf";
+            Conf.ReadOnly = true;
             // 
-            // treeView2
+            // flowLayoutPanel3
             // 
-            treeView2.Dock = DockStyle.Fill;
-            treeView2.Location = new Point(3, 19);
-            treeView2.Name = "treeView2";
-            treeNode7.Name = "L1";
-            treeNode7.Text = "L1";
-            treeNode8.Name = "L2";
-            treeNode8.Text = "L2";
-            treeNode9.Name = "L3";
-            treeNode9.Text = "L3";
-            treeView2.Nodes.AddRange(new TreeNode[] { treeNode7, treeNode8, treeNode9 });
-            treeView2.Size = new Size(495, 88);
-            treeView2.TabIndex = 1;
+            flowLayoutPanel3.Controls.Add(groupBox5);
+            flowLayoutPanel3.Controls.Add(groupBox6);
+            flowLayoutPanel3.Controls.Add(groupBox7);
+            flowLayoutPanel3.Controls.Add(btnThem);
+            flowLayoutPanel3.Controls.Add(btnXoa);
+            flowLayoutPanel3.Dock = DockStyle.Fill;
+            flowLayoutPanel3.Location = new Point(3, 72);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(401, 182);
+            flowLayoutPanel3.TabIndex = 18;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(cboThuocTinh);
+            groupBox5.Location = new Point(20, 20);
+            groupBox5.Margin = new Padding(20);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(133, 55);
+            groupBox5.TabIndex = 4;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Lựa chọn thuộc tính";
+            // 
+            // cboThuocTinh
+            // 
+            cboThuocTinh.Dock = DockStyle.Top;
+            cboThuocTinh.FormattingEnabled = true;
+            cboThuocTinh.Items.AddRange(new object[] { "Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age" });
+            cboThuocTinh.Location = new Point(3, 19);
+            cboThuocTinh.Name = "cboThuocTinh";
+            cboThuocTinh.Size = new Size(127, 23);
+            cboThuocTinh.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(cboDieuKien);
+            groupBox6.Location = new Point(193, 20);
+            groupBox6.Margin = new Padding(20);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(133, 55);
+            groupBox6.TabIndex = 5;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Lựa chọn điều kiện";
+            // 
+            // cboDieuKien
+            // 
+            cboDieuKien.Dock = DockStyle.Top;
+            cboDieuKien.FormattingEnabled = true;
+            cboDieuKien.Items.AddRange(new object[] { ">", "<" });
+            cboDieuKien.Location = new Point(3, 19);
+            cboDieuKien.Name = "cboDieuKien";
+            cboDieuKien.Size = new Size(127, 23);
+            cboDieuKien.TabIndex = 0;
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(txtGiaTri);
+            groupBox7.Location = new Point(20, 115);
+            groupBox7.Margin = new Padding(20);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(133, 55);
+            groupBox7.TabIndex = 10;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Giá trị cho điều kiện";
+            // 
+            // txtGiaTri
+            // 
+            txtGiaTri.Dock = DockStyle.Top;
+            txtGiaTri.Location = new Point(3, 19);
+            txtGiaTri.Name = "txtGiaTri";
+            txtGiaTri.Size = new Size(127, 23);
+            txtGiaTri.TabIndex = 0;
+            // 
+            // btnThem
+            // 
+            btnThem.Location = new Point(183, 125);
+            btnThem.Margin = new Padding(10, 30, 10, 30);
+            btnThem.Name = "btnThem";
+            btnThem.Size = new Size(75, 23);
+            btnThem.TabIndex = 11;
+            btnThem.Text = "Thêm";
+            btnThem.UseVisualStyleBackColor = true;
+            btnThem.Click += btnThem_Click;
+            // 
+            // btnXoa
+            // 
+            btnXoa.Location = new Point(278, 125);
+            btnXoa.Margin = new Padding(10, 30, 10, 30);
+            btnXoa.Name = "btnXoa";
+            btnXoa.Size = new Size(75, 23);
+            btnXoa.TabIndex = 12;
+            btnXoa.Text = "Xóa";
+            btnXoa.UseVisualStyleBackColor = true;
+            btnXoa.Click += btnXoa_Click;
+            // 
+            // btnThucThi
+            // 
+            btnThucThi.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnThucThi.Location = new Point(3, 266);
+            btnThucThi.Name = "btnThucThi";
+            btnThucThi.Size = new Size(75, 23);
+            btnThucThi.TabIndex = 7;
+            btnThucThi.Text = "Thực thi";
+            btnThucThi.UseVisualStyleBackColor = true;
+            btnThucThi.Click += btnThucThi_Click;
             // 
             // flowLayoutPanel1
             // 
             tableLayoutPanel1.SetColumnSpan(flowLayoutPanel1, 2);
-            flowLayoutPanel1.Controls.Add(groupBox2);
             flowLayoutPanel1.Controls.Add(groupBox1);
             flowLayoutPanel1.Controls.Add(groupBox4);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(838, 91);
+            flowLayoutPanel1.Size = new Size(838, 63);
             flowLayoutPanel1.TabIndex = 0;
             // 
-            // treeView1
+            // flowLayoutPanel2
             // 
-            treeView1.Dock = DockStyle.Fill;
-            treeView1.Location = new Point(3, 19);
-            treeView1.Name = "treeView1";
-            treeNode4.Name = "L1";
-            treeNode4.Text = "L1";
-            treeNode5.Name = "L2";
-            treeNode5.Text = "L2";
-            treeNode6.Name = "L3";
-            treeNode6.Text = "L3";
-            treeView1.Nodes.AddRange(new TreeNode[] { treeNode4, treeNode5, treeNode6 });
-            treeView1.Size = new Size(325, 88);
-            treeView1.TabIndex = 2;
+            flowLayoutPanel2.Controls.Add(lblSoLuat);
+            flowLayoutPanel2.Controls.Add(lblSoLuatHopLe);
+            flowLayoutPanel2.Dock = DockStyle.Fill;
+            flowLayoutPanel2.Location = new Point(410, 260);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new Size(431, 29);
+            flowLayoutPanel2.TabIndex = 20;
+            // 
+            // lblSoLuat
+            // 
+            lblSoLuat.BorderStyle = BorderStyle.FixedSingle;
+            lblSoLuat.Location = new Point(3, 3);
+            lblSoLuat.Margin = new Padding(3);
+            lblSoLuat.Name = "lblSoLuat";
+            lblSoLuat.Size = new Size(152, 23);
+            lblSoLuat.TabIndex = 10;
+            lblSoLuat.Text = "Tổng số luật: ";
+            lblSoLuat.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblSoLuatHopLe
+            // 
+            lblSoLuatHopLe.BorderStyle = BorderStyle.FixedSingle;
+            lblSoLuatHopLe.Location = new Point(238, 3);
+            lblSoLuatHopLe.Margin = new Padding(80, 3, 3, 3);
+            lblSoLuatHopLe.Name = "lblSoLuatHopLe";
+            lblSoLuatHopLe.Size = new Size(152, 23);
+            lblSoLuatHopLe.TabIndex = 11;
+            lblSoLuatHopLe.Text = "Số luật hợp lệ: ";
+            lblSoLuatHopLe.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // AssociationRuleMiningView
             // 
@@ -316,26 +370,25 @@
             Controls.Add(tableLayoutPanel1);
             Name = "AssociationRuleMiningView";
             Size = new Size(844, 456);
-            groupBox2.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRoiRacGiaTri).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
-            centeredGroupBoxTapPhoBien.ResumeLayout(false);
-            centeredGroupBoxTapLuat.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvLKH).EndInit();
+            flowLayoutPanel3.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
+            groupBox6.ResumeLayout(false);
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private GroupBox groupBox2;
-        private ComboBox cboboxThuatToan;
-        private GroupBox groupBox3;
-        private CheckedListBox checkListThuocTinh;
         private DataGridView dgvRoiRacGiaTri;
         private GroupBox groupBox1;
         private TextBox txtMinsup;
@@ -343,15 +396,22 @@
         private TextBox txtMinconf;
         private TableLayoutPanel tableLayoutPanel1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button btnKetQua;
-        private CenteredGroupBox centeredGroupBoxTapLuat;
-        private TreeView treeView2;
-        private DataGridViewTextBoxColumn AttributeType;
-        private DataGridViewTextBoxColumn GreaterThan;
-        private DataGridViewTextBoxColumn RangeCategory;
-        private DataGridViewTextBoxColumn LessThan;
-        private CenteredGroupBox centeredGroupBoxTapPhoBien;
-        private Button btnLuu;
-        private TreeView treeView1;
+        private Button btnThucThi;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private GroupBox groupBox5;
+        private ComboBox cboThuocTinh;
+        private GroupBox groupBox6;
+        private ComboBox cboDieuKien;
+        private GroupBox groupBox7;
+        private TextBox txtGiaTri;
+        private Button btnThem;
+        private Button btnXoa;
+        private GroupBox groupBox3;
+        private DataGridView dgvLKH;
+        private DataGridViewTextBoxColumn LKH;
+        private DataGridViewTextBoxColumn Conf;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Label lblSoLuat;
+        private Label lblSoLuatHopLe;
     }
 }

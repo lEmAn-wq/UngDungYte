@@ -34,27 +34,31 @@
             checkedListBox1 = new CheckedListBox();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            btnSaveFile = new Button();
             panel1 = new Panel();
-            groupBox1 = new GroupBox();
-            label1 = new Label();
-            btnLoadFile = new Button();
-            rowContextMenu = new ContextMenuStrip(components);
-            undoDeleteMenuItem = new ToolStripMenuItem();
-            label2 = new Label();
             groupBox2 = new GroupBox();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            button3 = new Button();
             button4 = new Button();
+            button3 = new Button();
+            textBox1 = new TextBox();
+            comboBox1 = new ComboBox();
+            groupBox1 = new GroupBox();
             button2 = new Button();
+            lblSoDongSua = new Label();
+            btnLoadFile = new Button();
+            btnSaveFile = new Button();
+            lblSoDongXoa = new Label();
+            panel2 = new Panel();
+            lblSoDongTrungLap = new Label();
+            lblSoDong = new Label();
+            undoDeleteMenuItem = new ToolStripMenuItem();
+            rowContextMenu = new ContextMenuStrip(components);
             tableLayoutPanel1.SuspendLayout();
             Ti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
-            groupBox1.SuspendLayout();
-            rowContextMenu.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            panel2.SuspendLayout();
+            rowContextMenu.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,18 +66,18 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.93839F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 67.061615F));
-            tableLayoutPanel1.Controls.Add(label2, 1, 2);
             tableLayoutPanel1.Controls.Add(Ti, 0, 0);
             tableLayoutPanel1.Controls.Add(dataGridView1, 0, 1);
             tableLayoutPanel1.Controls.Add(panel1, 1, 0);
             tableLayoutPanel1.Controls.Add(btnSaveFile, 0, 2);
+            tableLayoutPanel1.Controls.Add(panel2, 1, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 113F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 155F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
             tableLayoutPanel1.Size = new Size(844, 456);
             tableLayoutPanel1.TabIndex = 1;
             // 
@@ -114,9 +118,9 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tableLayoutPanel1.SetColumnSpan(dataGridView1, 2);
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 116);
+            dataGridView1.Location = new Point(3, 158);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(838, 302);
+            dataGridView1.Size = new Size(838, 251);
             dataGridView1.TabIndex = 5;
             dataGridView1.CellBeginEdit += dataGridView1_CellBeginEdit;
             dataGridView1.CellClick += dataGridView1_CellClick;
@@ -124,17 +128,6 @@
             dataGridView1.RowContextMenuStripNeeded += dataGridView1_RowContextMenuStripNeeded;
             dataGridView1.RowPrePaint += dataGridView1_RowPrePaint;
             dataGridView1.UserDeletingRow += dataGridView1_UserDeletingRow;
-            // 
-            // btnSaveFile
-            // 
-            btnSaveFile.Anchor = AnchorStyles.Right;
-            btnSaveFile.Location = new Point(200, 427);
-            btnSaveFile.Name = "btnSaveFile";
-            btnSaveFile.Size = new Size(75, 23);
-            btnSaveFile.TabIndex = 6;
-            btnSaveFile.Text = "Save file";
-            btnSaveFile.UseVisualStyleBackColor = true;
-            btnSaveFile.Click += btnSaveFile_Click;
             // 
             // panel1
             // 
@@ -144,63 +137,8 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(281, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(560, 107);
+            panel1.Size = new Size(560, 149);
             panel1.TabIndex = 7;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(309, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(134, 97);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Thông tin chỉnh sửa";
-            // 
-            // label1
-            // 
-            label1.Dock = DockStyle.Top;
-            label1.Location = new Point(3, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(128, 44);
-            label1.TabIndex = 7;
-            label1.Text = "Số dòng sửa: 10\r\nSố dòng xóa: 20";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnLoadFile
-            // 
-            btnLoadFile.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnLoadFile.Location = new Point(482, 81);
-            btnLoadFile.Name = "btnLoadFile";
-            btnLoadFile.Size = new Size(75, 23);
-            btnLoadFile.TabIndex = 5;
-            btnLoadFile.Text = "Load file";
-            btnLoadFile.UseVisualStyleBackColor = true;
-            btnLoadFile.Click += btnLoadFile_Click;
-            // 
-            // rowContextMenu
-            // 
-            rowContextMenu.Items.AddRange(new ToolStripItem[] { undoDeleteMenuItem });
-            rowContextMenu.Name = "contextMenuStrip1";
-            rowContextMenu.Size = new Size(110, 26);
-            // 
-            // undoDeleteMenuItem
-            // 
-            undoDeleteMenuItem.Name = "undoDeleteMenuItem";
-            undoDeleteMenuItem.Size = new Size(109, 22);
-            undoDeleteMenuItem.Text = "Bỏ xóa";
-            undoDeleteMenuItem.Click += undoDeleteMenuItem_Click;
-            // 
-            // label2
-            // 
-            label2.Dock = DockStyle.Right;
-            label2.Location = new Point(647, 421);
-            label2.Name = "label2";
-            label2.Size = new Size(194, 35);
-            label2.TabIndex = 10;
-            label2.Text = "Các dòng trùng lặp: 2";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // groupBox2
             // 
@@ -215,21 +153,14 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Các version";
             // 
-            // comboBox1
+            // button4
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(4, 21);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(166, 23);
-            comboBox1.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(4, 53);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Tên version...";
-            textBox1.Size = new Size(166, 23);
-            textBox1.TabIndex = 1;
+            button4.Location = new Point(195, 22);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 3;
+            button4.Text = "Xóa";
+            button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -240,23 +171,125 @@
             button3.Text = "Thêm";
             button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // textBox1
             // 
-            button4.Location = new Point(195, 22);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 3;
-            button4.Text = "Xóa";
-            button4.UseVisualStyleBackColor = true;
+            textBox1.Location = new Point(4, 53);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Tên version...";
+            textBox1.Size = new Size(166, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(4, 21);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(166, 23);
+            comboBox1.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblSoDongXoa);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(lblSoDongSua);
+            groupBox1.Location = new Point(309, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(147, 115);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Thông tin chỉnh sửa";
             // 
             // button2
             // 
-            button2.Location = new Point(6, 66);
+            button2.Location = new Point(3, 82);
             button2.Name = "button2";
-            button2.Size = new Size(122, 23);
+            button2.Size = new Size(141, 23);
             button2.TabIndex = 8;
             button2.Text = "Xác nhận thay đổi";
             button2.UseVisualStyleBackColor = true;
+            // 
+            // lblSoDongSua
+            // 
+            lblSoDongSua.Location = new Point(3, 25);
+            lblSoDongSua.Name = "lblSoDongSua";
+            lblSoDongSua.Size = new Size(141, 23);
+            lblSoDongSua.TabIndex = 7;
+            lblSoDongSua.Text = "Số dòng sửa: 10\r\n";
+            lblSoDongSua.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnLoadFile
+            // 
+            btnLoadFile.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnLoadFile.Location = new Point(482, 123);
+            btnLoadFile.Name = "btnLoadFile";
+            btnLoadFile.Size = new Size(75, 23);
+            btnLoadFile.TabIndex = 5;
+            btnLoadFile.Text = "Load file";
+            btnLoadFile.UseVisualStyleBackColor = true;
+            btnLoadFile.Click += btnLoadFile_Click;
+            // 
+            // btnSaveFile
+            // 
+            btnSaveFile.Anchor = AnchorStyles.Right;
+            btnSaveFile.Location = new Point(200, 422);
+            btnSaveFile.Name = "btnSaveFile";
+            btnSaveFile.Size = new Size(75, 23);
+            btnSaveFile.TabIndex = 6;
+            btnSaveFile.Text = "Save file";
+            btnSaveFile.UseVisualStyleBackColor = true;
+            btnSaveFile.Click += btnSaveFile_Click;
+            // 
+            // lblSoDongXoa
+            // 
+            lblSoDongXoa.Location = new Point(3, 55);
+            lblSoDongXoa.Name = "lblSoDongXoa";
+            lblSoDongXoa.Size = new Size(141, 23);
+            lblSoDongXoa.TabIndex = 9;
+            lblSoDongXoa.Text = "Số dòng xóa: 10\r\n";
+            lblSoDongXoa.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(lblSoDongTrungLap);
+            panel2.Controls.Add(lblSoDong);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(281, 415);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(560, 38);
+            panel2.TabIndex = 8;
+            // 
+            // lblSoDongTrungLap
+            // 
+            lblSoDongTrungLap.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lblSoDongTrungLap.Location = new Point(387, 5);
+            lblSoDongTrungLap.Name = "lblSoDongTrungLap";
+            lblSoDongTrungLap.Size = new Size(128, 25);
+            lblSoDongTrungLap.TabIndex = 10;
+            lblSoDongTrungLap.Text = "Số dòng trùng lặp: 10\r\n";
+            lblSoDongTrungLap.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblSoDong
+            // 
+            lblSoDong.Location = new Point(88, 5);
+            lblSoDong.Margin = new Padding(3, 0, 30, 0);
+            lblSoDong.Name = "lblSoDong";
+            lblSoDong.Size = new Size(128, 25);
+            lblSoDong.TabIndex = 11;
+            lblSoDong.Text = "Số dòng: 10\r\n";
+            lblSoDong.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // undoDeleteMenuItem
+            // 
+            undoDeleteMenuItem.Name = "undoDeleteMenuItem";
+            undoDeleteMenuItem.Size = new Size(109, 22);
+            undoDeleteMenuItem.Text = "Bỏ xóa";
+            undoDeleteMenuItem.Click += undoDeleteMenuItem_Click;
+            // 
+            // rowContextMenu
+            // 
+            rowContextMenu.Items.AddRange(new ToolStripItem[] { undoDeleteMenuItem });
+            rowContextMenu.Name = "contextMenuStrip1";
+            rowContextMenu.Size = new Size(110, 26);
             // 
             // FileCleaningView
             // 
@@ -269,10 +302,11 @@
             Ti.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            rowContextMenu.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            rowContextMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -287,15 +321,18 @@
         private Button btnLoadFile;
         private CheckedListBox checkedListBox1;
         private GroupBox groupBox1;
-        private Label label1;
-        private ContextMenuStrip rowContextMenu;
-        private ToolStripMenuItem undoDeleteMenuItem;
-        private Label label2;
+        private Label lblSoDongSua;
         private GroupBox groupBox2;
         private Button button4;
         private Button button3;
         private TextBox textBox1;
         private ComboBox comboBox1;
         private Button button2;
+        private Label lblSoDongXoa;
+        private Panel panel2;
+        private Label lblSoDongTrungLap;
+        private Label lblSoDong;
+        private ToolStripMenuItem undoDeleteMenuItem;
+        private ContextMenuStrip rowContextMenu;
     }
 }

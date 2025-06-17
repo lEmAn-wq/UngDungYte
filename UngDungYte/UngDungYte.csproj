@@ -23,12 +23,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="PythonScripts\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="pythonnet" Version="3.0.5" />
-  </ItemGroup>
-
 </Project>
