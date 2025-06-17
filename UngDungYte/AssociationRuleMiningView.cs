@@ -9,12 +9,14 @@ namespace UngDungYte
 {
     public partial class AssociationRuleMiningView : UserControl
     {
+        public static List<(List<Condition> Antecedent,double SupportAB, double Confidence)> SavedRules = new();
+
         private int validRuleCount;
 
         [DllImport("kernel32.dll", SetLastError = true)]
         private static extern bool AllocConsole();
 
-        private record Condition(string Attribute, string Operator, double Value);
+        public record Condition(string Attribute, string Operator, double Value);
 
         // Định nghĩa kiểu dữ liệu của các thuộc tính
         private static readonly HashSet<string> IntegerAttributes = new() { "Pregnancies", "Age", "Glucose", "BloodPressure", "SkinThickness", "Insulin" };
@@ -133,6 +135,8 @@ namespace UngDungYte
         {
             try
             {
+                SavedRules.Clear(); // Xóa luật cũ
+
                 if (!ValidateInput(out double minConf, out double minSup))
                     return;
 
@@ -144,9 +148,9 @@ namespace UngDungYte
                 //AllocConsole();
                 //Console.WriteLine("Số dòng dgv: "+totalRows);
 
-                var rules = GenerateAssociationRules(combos, totalRows, minSup, minConf);
+                SavedRules = GenerateAssociationRules(combos, totalRows, minSup, minConf);
 
-                UpdateDataGridViewLKH(rules, minConf);
+                UpdateDataGridViewLKH(SavedRules, minConf);
                 int totalRules = dgvLKH.Rows.Count -1; // Tổng số luật từ số dòng trong dgvLKH
                 lblSoLuat.Text = $"Tổng số luật: {totalRules}";
                 lblSoLuat.Visible = lblSoLuatHopLe.Visible = true;

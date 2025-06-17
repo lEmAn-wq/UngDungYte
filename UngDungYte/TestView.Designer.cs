@@ -30,26 +30,26 @@
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
+            txtPregnancies = new TextBox();
             groupBox2 = new GroupBox();
-            textBox2 = new TextBox();
+            txtGlucose = new TextBox();
             groupBox3 = new GroupBox();
-            textBox3 = new TextBox();
+            txtBloodPressure = new TextBox();
             groupBox4 = new GroupBox();
-            textBox4 = new TextBox();
+            txtSkinThickness = new TextBox();
             groupBox5 = new GroupBox();
-            textBox5 = new TextBox();
+            txtInsulin = new TextBox();
             groupBox6 = new GroupBox();
-            textBox6 = new TextBox();
+            txtBMI = new TextBox();
             groupBox7 = new GroupBox();
-            textBox7 = new TextBox();
+            txtDiabetesPedigreeFunction = new TextBox();
             groupBox8 = new GroupBox();
-            textBox8 = new TextBox();
-            button1 = new Button();
+            txtAge = new TextBox();
+            btnKiemTra = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             centeredGroupBox1 = new CenteredGroupBox();
-            label3 = new Label();
-            label2 = new Label();
+            lblDuDoanLogistic = new Label();
+            lblLKH = new Label();
             flowLayoutPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -73,7 +73,7 @@
             flowLayoutPanel1.Controls.Add(groupBox6);
             flowLayoutPanel1.Controls.Add(groupBox7);
             flowLayoutPanel1.Controls.Add(groupBox8);
-            flowLayoutPanel1.Controls.Add(button1);
+            flowLayoutPanel1.Controls.Add(btnKiemTra);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -82,7 +82,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtPregnancies);
             groupBox1.Location = new Point(20, 20);
             groupBox1.Margin = new Padding(20);
             groupBox1.Name = "groupBox1";
@@ -91,18 +91,18 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Pregnancies";
             // 
-            // textBox1
+            // txtPregnancies
             // 
-            textBox1.Dock = DockStyle.Top;
-            textBox1.Location = new Point(3, 19);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Số lần mang thai\n";
-            textBox1.Size = new Size(194, 23);
-            textBox1.TabIndex = 0;
+            txtPregnancies.Dock = DockStyle.Top;
+            txtPregnancies.Location = new Point(3, 19);
+            txtPregnancies.Name = "txtPregnancies";
+            txtPregnancies.PlaceholderText = "Số lần mang thai\n";
+            txtPregnancies.Size = new Size(194, 23);
+            txtPregnancies.TabIndex = 0;
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(txtGlucose);
             groupBox2.Location = new Point(260, 20);
             groupBox2.Margin = new Padding(20);
             groupBox2.Name = "groupBox2";
@@ -111,18 +111,18 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Glucose";
             // 
-            // textBox2
+            // txtGlucose
             // 
-            textBox2.Dock = DockStyle.Top;
-            textBox2.Location = new Point(3, 19);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Đường huyết (mg/dL)\n\n";
-            textBox2.Size = new Size(194, 23);
-            textBox2.TabIndex = 0;
+            txtGlucose.Dock = DockStyle.Top;
+            txtGlucose.Location = new Point(3, 19);
+            txtGlucose.Name = "txtGlucose";
+            txtGlucose.PlaceholderText = "Đường huyết (mg/dL)\n\n";
+            txtGlucose.Size = new Size(194, 23);
+            txtGlucose.TabIndex = 0;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(textBox3);
+            groupBox3.Controls.Add(txtBloodPressure);
             groupBox3.Location = new Point(500, 20);
             groupBox3.Margin = new Padding(20);
             groupBox3.Name = "groupBox3";
@@ -131,18 +131,18 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "BloodPressure";
             // 
-            // textBox3
+            // txtBloodPressure
             // 
-            textBox3.Dock = DockStyle.Top;
-            textBox3.Location = new Point(3, 19);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Huyết áp (mmHg)\n\n";
-            textBox3.Size = new Size(194, 23);
-            textBox3.TabIndex = 0;
+            txtBloodPressure.Dock = DockStyle.Top;
+            txtBloodPressure.Location = new Point(3, 19);
+            txtBloodPressure.Name = "txtBloodPressure";
+            txtBloodPressure.PlaceholderText = "Huyết áp (mmHg)\n\n";
+            txtBloodPressure.Size = new Size(194, 23);
+            txtBloodPressure.TabIndex = 0;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(textBox4);
+            groupBox4.Controls.Add(txtSkinThickness);
             groupBox4.Location = new Point(20, 112);
             groupBox4.Margin = new Padding(20);
             groupBox4.Name = "groupBox4";
@@ -151,18 +151,18 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "SkinThickness";
             // 
-            // textBox4
+            // txtSkinThickness
             // 
-            textBox4.Dock = DockStyle.Top;
-            textBox4.Location = new Point(3, 19);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Độ dày da (mm)\n\n";
-            textBox4.Size = new Size(194, 23);
-            textBox4.TabIndex = 0;
+            txtSkinThickness.Dock = DockStyle.Top;
+            txtSkinThickness.Location = new Point(3, 19);
+            txtSkinThickness.Name = "txtSkinThickness";
+            txtSkinThickness.PlaceholderText = "Độ dày da (mm)\n\n";
+            txtSkinThickness.Size = new Size(194, 23);
+            txtSkinThickness.TabIndex = 0;
             // 
             // groupBox5
             // 
-            groupBox5.Controls.Add(textBox5);
+            groupBox5.Controls.Add(txtInsulin);
             groupBox5.Location = new Point(260, 112);
             groupBox5.Margin = new Padding(20);
             groupBox5.Name = "groupBox5";
@@ -171,18 +171,18 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Insulin";
             // 
-            // textBox5
+            // txtInsulin
             // 
-            textBox5.Dock = DockStyle.Top;
-            textBox5.Location = new Point(3, 19);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "Insulin (mu U/mL)\n\n";
-            textBox5.Size = new Size(194, 23);
-            textBox5.TabIndex = 0;
+            txtInsulin.Dock = DockStyle.Top;
+            txtInsulin.Location = new Point(3, 19);
+            txtInsulin.Name = "txtInsulin";
+            txtInsulin.PlaceholderText = "Insulin (mu U/mL)\n\n";
+            txtInsulin.Size = new Size(194, 23);
+            txtInsulin.TabIndex = 0;
             // 
             // groupBox6
             // 
-            groupBox6.Controls.Add(textBox6);
+            groupBox6.Controls.Add(txtBMI);
             groupBox6.Location = new Point(500, 112);
             groupBox6.Margin = new Padding(20);
             groupBox6.Name = "groupBox6";
@@ -191,18 +191,18 @@
             groupBox6.TabStop = false;
             groupBox6.Text = "BMI";
             // 
-            // textBox6
+            // txtBMI
             // 
-            textBox6.Dock = DockStyle.Top;
-            textBox6.Location = new Point(3, 19);
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = "BMI (kg/m²)\n\n";
-            textBox6.Size = new Size(194, 23);
-            textBox6.TabIndex = 0;
+            txtBMI.Dock = DockStyle.Top;
+            txtBMI.Location = new Point(3, 19);
+            txtBMI.Name = "txtBMI";
+            txtBMI.PlaceholderText = "BMI (kg/m²)\n\n";
+            txtBMI.Size = new Size(194, 23);
+            txtBMI.TabIndex = 0;
             // 
             // groupBox7
             // 
-            groupBox7.Controls.Add(textBox7);
+            groupBox7.Controls.Add(txtDiabetesPedigreeFunction);
             groupBox7.Location = new Point(20, 204);
             groupBox7.Margin = new Padding(20);
             groupBox7.Name = "groupBox7";
@@ -211,18 +211,18 @@
             groupBox7.TabStop = false;
             groupBox7.Text = "DiabetesPedigreeFunction";
             // 
-            // textBox7
+            // txtDiabetesPedigreeFunction
             // 
-            textBox7.Dock = DockStyle.Top;
-            textBox7.Location = new Point(3, 19);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = "Chỉ số di truyền bệnh tiểu đường\n";
-            textBox7.Size = new Size(194, 23);
-            textBox7.TabIndex = 0;
+            txtDiabetesPedigreeFunction.Dock = DockStyle.Top;
+            txtDiabetesPedigreeFunction.Location = new Point(3, 19);
+            txtDiabetesPedigreeFunction.Name = "txtDiabetesPedigreeFunction";
+            txtDiabetesPedigreeFunction.PlaceholderText = "Chỉ số di truyền bệnh tiểu đường\n";
+            txtDiabetesPedigreeFunction.Size = new Size(194, 23);
+            txtDiabetesPedigreeFunction.TabIndex = 0;
             // 
             // groupBox8
             // 
-            groupBox8.Controls.Add(textBox8);
+            groupBox8.Controls.Add(txtAge);
             groupBox8.Location = new Point(260, 204);
             groupBox8.Margin = new Padding(20);
             groupBox8.Name = "groupBox8";
@@ -231,24 +231,25 @@
             groupBox8.TabStop = false;
             groupBox8.Text = "Age";
             // 
-            // textBox8
+            // txtAge
             // 
-            textBox8.Dock = DockStyle.Top;
-            textBox8.Location = new Point(3, 19);
-            textBox8.Name = "textBox8";
-            textBox8.PlaceholderText = "Tuổi";
-            textBox8.Size = new Size(194, 23);
-            textBox8.TabIndex = 0;
+            txtAge.Dock = DockStyle.Top;
+            txtAge.Location = new Point(3, 19);
+            txtAge.Name = "txtAge";
+            txtAge.PlaceholderText = "Tuổi";
+            txtAge.Size = new Size(194, 23);
+            txtAge.TabIndex = 0;
             // 
-            // button1
+            // btnKiemTra
             // 
-            button1.Location = new Point(510, 214);
-            button1.Margin = new Padding(30);
-            button1.Name = "button1";
-            button1.Size = new Size(97, 33);
-            button1.TabIndex = 10;
-            button1.Text = "Kiểm tra";
-            button1.UseVisualStyleBackColor = true;
+            btnKiemTra.Location = new Point(510, 214);
+            btnKiemTra.Margin = new Padding(30);
+            btnKiemTra.Name = "btnKiemTra";
+            btnKiemTra.Size = new Size(97, 33);
+            btnKiemTra.TabIndex = 10;
+            btnKiemTra.Text = "Kiểm tra";
+            btnKiemTra.UseVisualStyleBackColor = true;
+            btnKiemTra.Click += btnKiemTra_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -269,8 +270,8 @@
             // centeredGroupBox1
             // 
             tableLayoutPanel1.SetColumnSpan(centeredGroupBox1, 2);
-            centeredGroupBox1.Controls.Add(label3);
-            centeredGroupBox1.Controls.Add(label2);
+            centeredGroupBox1.Controls.Add(lblDuDoanLogistic);
+            centeredGroupBox1.Controls.Add(lblLKH);
             centeredGroupBox1.Dock = DockStyle.Fill;
             centeredGroupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             centeredGroupBox1.Location = new Point(3, 303);
@@ -279,27 +280,26 @@
             centeredGroupBox1.TabIndex = 2;
             centeredGroupBox1.TabStop = false;
             centeredGroupBox1.Text = "Kết quả";
-            centeredGroupBox1.Click += centeredGroupBox1_Click;
             // 
-            // label3
+            // lblDuDoanLogistic
             // 
-            label3.Dock = DockStyle.Top;
-            label3.Location = new Point(3, 80);
-            label3.Name = "label3";
-            label3.Size = new Size(832, 55);
-            label3.TabIndex = 1;
-            label3.Text = "Xác xuất mắc bệnh tiểu đường của bạn là: 85%";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            lblDuDoanLogistic.Dock = DockStyle.Top;
+            lblDuDoanLogistic.Location = new Point(3, 80);
+            lblDuDoanLogistic.Name = "lblDuDoanLogistic";
+            lblDuDoanLogistic.Size = new Size(832, 55);
+            lblDuDoanLogistic.TabIndex = 1;
+            lblDuDoanLogistic.Text = "Xác xuất mắc bệnh tiểu đường của bạn là: 85%";
+            lblDuDoanLogistic.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblLKH
             // 
-            label2.Dock = DockStyle.Top;
-            label2.Location = new Point(3, 25);
-            label2.Name = "label2";
-            label2.Size = new Size(832, 55);
-            label2.TabIndex = 0;
-            label2.Text = "Thống kê cho thấy: Nếu tuổi trên 60 và BMI trên 60 thì tỉ lệ mắc bệnh tiểu đường là 70%";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            lblLKH.Dock = DockStyle.Top;
+            lblLKH.Location = new Point(3, 25);
+            lblLKH.Name = "lblLKH";
+            lblLKH.Size = new Size(832, 55);
+            lblLKH.TabIndex = 0;
+            lblLKH.Text = "Thống kê cho thấy: Nếu tuổi trên 60 và BMI trên 60 thì tỉ lệ mắc bệnh tiểu đường là 70%";
+            lblLKH.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // TestView
             // 
@@ -336,23 +336,23 @@
         private TableLayoutPanel tableLayoutPanel1;
         private CenteredGroupBox centeredGroupBox1;
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox txtPregnancies;
         private GroupBox groupBox2;
-        private TextBox textBox2;
+        private TextBox txtGlucose;
         private GroupBox groupBox3;
-        private TextBox textBox3;
+        private TextBox txtBloodPressure;
         private GroupBox groupBox4;
-        private TextBox textBox4;
+        private TextBox txtSkinThickness;
         private GroupBox groupBox5;
-        private TextBox textBox5;
+        private TextBox txtInsulin;
         private GroupBox groupBox6;
-        private TextBox textBox6;
+        private TextBox txtBMI;
         private GroupBox groupBox7;
-        private TextBox textBox7;
+        private TextBox txtDiabetesPedigreeFunction;
         private GroupBox groupBox8;
-        private TextBox textBox8;
-        private Button button1;
-        private Label label2;
-        private Label label3;
+        private TextBox txtAge;
+        private Button btnKiemTra;
+        private Label lblLKH;
+        private Label lblDuDoanLogistic;
     }
 }
