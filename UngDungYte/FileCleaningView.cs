@@ -16,6 +16,10 @@ namespace UngDungYte
         public FileCleaningView()
         {
             InitializeComponent();
+            //lblSoDong
+            //lblSoDongSua
+            //lblSoDongTrungLap
+            //lblSoDongXoa
         }
 
         public void btnLoadFile_Click(object sender, EventArgs e)
@@ -34,15 +38,75 @@ namespace UngDungYte
                 }
 
                 dataGridView1.DataSource = dt.DefaultView;
+
+                // Đếm tổng số dòng
+                int soDong = dt.Rows.Count;
+
+                // Đếm số dòng trùng lặp (dựa trên toàn bộ giá trị các cột, không tính cột Status)
+                var colNames = dt.Columns.Cast<DataColumn>()
+                                  .Where(c => c.ColumnName != "Status")
+                                  .Select(c => c.ColumnName).ToList();
+
+                var hashSet = new HashSet<string>();
+                int soDongTrungLap = 0;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    var key = string.Join("||", colNames.Select(col => row[col]?.ToString() ?? ""));
+                    if (!hashSet.Add(key))
+                        soDongTrungLap++;
+                }
+
+                lblSoDong.Text = $"Số dòng: {soDong}";
+                lblSoDongTrungLap.Text = $"Số dòng trùng lặp: {soDongTrungLap}";
             }
         }
 
         private void btnSaveFile_Click(object sender, EventArgs e)
         {
-            UIHelper.ShowSaveFileDialogAndExportToCsv(dataGridView1);
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                UIHelper.ShowMessageError("Không có dữ liệu để lưu.");
+                return;
+            }
+
+            // Kiểm tra nếu còn dòng có Status ≠ 0
+            bool hasPendingChanges = dt.AsEnumerable().Any(r => r.Field<int>("Status") != 0);
+            if (hasPendingChanges)
+            {
+                UIHelper.ShowMessage("Vui lòng xác nhận trước khi lưu (tất cả dòng phải có Status = 0).");
+                return;
+            }
+
+            var dtCopy = dt.Copy();
+            if (dtCopy.Columns.Contains("Status"))
+                dtCopy.Columns.Remove("Status");
+
+            UIHelper.ShowSaveFileDialogAndExportToCsv(dtCopy);
         }
 
+
+
         #region Sự kiện DataGridView (Xử lý xóa sửa và tô màu dòng)
+
+        private void CapNhatThongTinDong()
+        {
+            int soDongXoa = dt.AsEnumerable().Count(r => r.Field<int>("Status") == 2);
+            int soDongSua = dt.AsEnumerable().Count(r => r.Field<int>("Status") == 1);
+
+            // Đếm dòng trùng lặp dựa trên giá trị toàn bộ cột (bỏ cột Status)
+            var soCotThuc = dt.Columns.Count - 1;
+            var keyRows = dt.AsEnumerable()
+                .Where(r => Convert.ToInt32(r["Status"]) != 2)
+                .Select(r => string.Join("|", r.ItemArray.Take(soCotThuc)));
+
+            int soDongTrungLap = keyRows.GroupBy(k => k).Where(g => g.Count() > 1).Sum(g => g.Count() - 1);
+
+            lblSoDongXoa.Text = $"Đã xoá: {soDongXoa}";
+            lblSoDongSua.Text = $"Đã sửa: {soDongSua}";
+            lblSoDongTrungLap.Text = $"Trùng lặp: {soDongTrungLap}";
+        }
+
 
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
@@ -73,6 +137,8 @@ namespace UngDungYte
 
                 var key = (dataRow, e.ColumnIndex);
                 originalCellValues[key] = oldValue;
+
+                CapNhatThongTinDong();
             }
         }
 
@@ -85,6 +151,7 @@ namespace UngDungYte
                 if (Convert.ToInt32(drv["Status"]) != 2)
                 {
                     drv["Status"] = 2;
+                    CapNhatThongTinDong();
                 }
             }
         }
@@ -170,8 +237,10 @@ namespace UngDungYte
             dataRow["Status"] = anyEditedCell ? 1 : 0;
 
             rightClickedRowIndex = -1;
+
+            CapNhatThongTinDong();
         }
-      
+
         private void dataGridView1_RowContextMenuStripNeeded(object sender, DataGridViewRowContextMenuStripNeededEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -187,5 +256,43 @@ namespace UngDungYte
         }
 
         #endregion
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            if (dt == null) return;
+
+            // Xóa các dòng có Status = 2
+            var rowsToDelete = dt.AsEnumerable()
+                .Where(r => r.Field<int>("Status") == 2)
+                .ToList();
+
+            foreach (var row in rowsToDelete)
+                dt.Rows.Remove(row);
+
+            // Xóa lịch sử giá trị cũ
+            originalCellValues.Clear();
+
+            // Reset lại Status = 0 cho các dòng còn lại
+            foreach (DataRow row in dt.Rows)
+                row["Status"] = 0;
+
+            foreach (DataGridViewRow dgvRow in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in dgvRow.Cells)
+                {
+                    cell.Style.BackColor = Color.Empty;
+                }
+                dgvRow.DefaultCellStyle.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+            }
+
+            // Cập nhật lại các label nếu cần
+            lblSoDong.Text = $"Số dòng: {dt.Rows.Count}";
+            CapNhatThongTinDong();
+        }
+
+        private void btnTienXuLy_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

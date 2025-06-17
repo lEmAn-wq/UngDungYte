@@ -32,7 +32,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             Ti = new GroupBox();
             checkedListBox1 = new CheckedListBox();
-            button1 = new Button();
+            btnTienXuLy = new Button();
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
             groupBox2 = new GroupBox();
@@ -41,11 +41,11 @@
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             groupBox1 = new GroupBox();
-            button2 = new Button();
+            lblSoDongXoa = new Label();
+            btnXacNhan = new Button();
             lblSoDongSua = new Label();
             btnLoadFile = new Button();
             btnSaveFile = new Button();
-            lblSoDongXoa = new Label();
             panel2 = new Panel();
             lblSoDongTrungLap = new Label();
             lblSoDong = new Label();
@@ -84,7 +84,7 @@
             // Ti
             // 
             Ti.Controls.Add(checkedListBox1);
-            Ti.Controls.Add(button1);
+            Ti.Controls.Add(btnTienXuLy);
             Ti.Location = new Point(3, 3);
             Ti.Name = "Ti";
             Ti.Size = new Size(272, 107);
@@ -103,17 +103,19 @@
             checkedListBox1.Size = new Size(181, 85);
             checkedListBox1.TabIndex = 7;
             // 
-            // button1
+            // btnTienXuLy
             // 
-            button1.Location = new Point(190, 47);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Xử lý";
-            button1.UseVisualStyleBackColor = true;
+            btnTienXuLy.Location = new Point(190, 47);
+            btnTienXuLy.Name = "btnTienXuLy";
+            btnTienXuLy.Size = new Size(75, 23);
+            btnTienXuLy.TabIndex = 1;
+            btnTienXuLy.Text = "Xử lý";
+            btnTienXuLy.UseVisualStyleBackColor = true;
+            btnTienXuLy.Click += btnTienXuLy_Click;
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tableLayoutPanel1.SetColumnSpan(dataGridView1, 2);
@@ -190,7 +192,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(lblSoDongXoa);
-            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(btnXacNhan);
             groupBox1.Controls.Add(lblSoDongSua);
             groupBox1.Location = new Point(309, 3);
             groupBox1.Name = "groupBox1";
@@ -199,14 +201,24 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin chỉnh sửa";
             // 
-            // button2
+            // lblSoDongXoa
             // 
-            button2.Location = new Point(3, 82);
-            button2.Name = "button2";
-            button2.Size = new Size(141, 23);
-            button2.TabIndex = 8;
-            button2.Text = "Xác nhận thay đổi";
-            button2.UseVisualStyleBackColor = true;
+            lblSoDongXoa.Location = new Point(3, 55);
+            lblSoDongXoa.Name = "lblSoDongXoa";
+            lblSoDongXoa.Size = new Size(141, 23);
+            lblSoDongXoa.TabIndex = 9;
+            lblSoDongXoa.Text = "Số dòng xóa: 10\r\n";
+            lblSoDongXoa.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnXacNhan
+            // 
+            btnXacNhan.Location = new Point(3, 82);
+            btnXacNhan.Name = "btnXacNhan";
+            btnXacNhan.Size = new Size(141, 23);
+            btnXacNhan.TabIndex = 8;
+            btnXacNhan.Text = "Xác nhận thay đổi";
+            btnXacNhan.UseVisualStyleBackColor = true;
+            btnXacNhan.Click += btnXacNhan_Click;
             // 
             // lblSoDongSua
             // 
@@ -238,15 +250,6 @@
             btnSaveFile.Text = "Save file";
             btnSaveFile.UseVisualStyleBackColor = true;
             btnSaveFile.Click += btnSaveFile_Click;
-            // 
-            // lblSoDongXoa
-            // 
-            lblSoDongXoa.Location = new Point(3, 55);
-            lblSoDongXoa.Name = "lblSoDongXoa";
-            lblSoDongXoa.Size = new Size(141, 23);
-            lblSoDongXoa.TabIndex = 9;
-            lblSoDongXoa.Text = "Số dòng xóa: 10\r\n";
-            lblSoDongXoa.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -314,7 +317,7 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private GroupBox Ti;
-        private Button button1;
+        private Button btnTienXuLy;
         private DataGridView dataGridView1;
         private Button btnSaveFile;
         private Panel panel1;
@@ -327,7 +330,7 @@
         private Button button3;
         private TextBox textBox1;
         private ComboBox comboBox1;
-        private Button button2;
+        private Button btnXacNhan;
         private Label lblSoDongXoa;
         private Panel panel2;
         private Label lblSoDongTrungLap;

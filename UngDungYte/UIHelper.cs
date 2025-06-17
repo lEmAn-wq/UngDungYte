@@ -107,23 +107,25 @@ namespace UngDungYte
 
         #region CSV Export
 
-        public static void ShowSaveFileDialogAndExportToCsv(DataGridView dgv)
+        public static void ShowSaveFileDialogAndExportToCsv(DataTable dt)
         {
-            if (dgv == null || dgv.Rows.Count == 0)
+            if (dt == null || dt.Rows.Count == 0)
             {
                 ShowMessageWarning("Không có dữ liệu để lưu.");
                 return;
             }
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
-            saveFileDialog.Title = "Lưu file CSV";
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "CSV files (*.csv)|*.csv",
+                Title = "Lưu file CSV"
+            };
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    ExportDataGridViewToCsv(dgv, saveFileDialog.FileName);
+                    ExportDataTableToCsv(dt, saveFileDialog.FileName);
                     ShowMessage("Lưu file CSV thành công!");
                 }
                 catch (Exception ex)
@@ -133,34 +135,22 @@ namespace UngDungYte
             }
         }
 
-        public static void ExportDataGridViewToCsv(DataGridView dgv, string filePath)
+        public static void ExportDataTableToCsv(DataTable dt, string filePath)
         {
             using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
             {
                 // Ghi header
-                List<string> columnNames = new List<string>();
-                foreach (DataGridViewColumn col in dgv.Columns)
-                {
-                    columnNames.Add(col.HeaderText);
-                }
-                writer.WriteLine(string.Join(",", columnNames));
+                writer.WriteLine(string.Join(",", dt.Columns.Cast<DataColumn>().Select(c => c.ColumnName)));
 
-                // Ghi dữ liệu từng dòng
-                foreach (DataGridViewRow row in dgv.Rows)
+                // Ghi dữ liệu
+                foreach (DataRow row in dt.Rows)
                 {
-                    if (!row.IsNewRow)
-                    {
-                        List<string> rowValues = new List<string>();
-                        foreach (DataGridViewCell cell in row.Cells)
-                        {
-                            rowValues.Add(cell.Value?.ToString()?.Replace(",", " ") ?? "");
-                        }
-                        writer.WriteLine(string.Join(",", rowValues));
-                    }
+                    var values = dt.Columns.Cast<DataColumn>()
+                        .Select(c => row[c]?.ToString()?.Replace(",", " ") ?? "");
+                    writer.WriteLine(string.Join(",", values));
                 }
             }
         }
-
         #endregion
     }
 }
