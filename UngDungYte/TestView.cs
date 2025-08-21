@@ -93,8 +93,15 @@ namespace UngDungYte
             txtInsulin.Text, txtBMI.Text, txtDiabetesPedigreeFunction.Text, txtAge.Text
         });
 
-            string basePath = Path.Combine(Application.StartupPath, "script");
-            string filepath = Path.Combine(basePath, "script.py");
+            // Lấy thư mục project gốc
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+
+            // Tạo đường dẫn tới file
+            string filepath = Path.Combine(projectDir, "script", "script.py");
+
+
+            //string basePath = Path.Combine(Application.StartupPath, "script");
+            //string filepath = Path.Combine(basePath, "script.py");
             //string resultFilePath = Path.Combine(basePath, "result.txt");
 
             string pythonPath = @"C:\Users\Admin\AppData\Local\Programs\Python\Python312\python.exe";

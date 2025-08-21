@@ -6,6 +6,7 @@
         PatientSegmentationView patientSegmentationView = new PatientSegmentationView();
         AssociationRuleMiningView associationRuleMiningView = new AssociationRuleMiningView();
         CreateDiagnosisModelView createDiagnosisModelView = new CreateDiagnosisModelView();
+        TestView testView = new TestView();
         public MainForm()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
             labelTieuDe.Text = "Chẩn đoán tiểu đường";
-            UIHelper.LoadUserControlToPanel(panel1, new TestView());
+            UIHelper.LoadUserControlToPanel(panel1, testView);
         }
 
         private void dataSummaryToolStripMenuItem_Click(object sender, EventArgs e)

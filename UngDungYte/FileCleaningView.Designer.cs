@@ -41,6 +41,7 @@
             textBox1 = new TextBox();
             comboBox1 = new ComboBox();
             groupBox1 = new GroupBox();
+            btnBoQua = new Button();
             lblSoDongXoa = new Label();
             btnXacNhan = new Button();
             lblSoDongSua = new Label();
@@ -51,6 +52,7 @@
             lblSoDong = new Label();
             undoDeleteMenuItem = new ToolStripMenuItem();
             rowContextMenu = new ContextMenuStrip(components);
+            btnKiemTra = new Button();
             tableLayoutPanel1.SuspendLayout();
             Ti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -78,6 +80,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 155F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(844, 456);
             tableLayoutPanel1.TabIndex = 1;
             // 
@@ -133,6 +136,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnKiemTra);
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(btnLoadFile);
@@ -191,15 +195,26 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnBoQua);
             groupBox1.Controls.Add(lblSoDongXoa);
             groupBox1.Controls.Add(btnXacNhan);
             groupBox1.Controls.Add(lblSoDongSua);
             groupBox1.Location = new Point(309, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(147, 115);
+            groupBox1.Size = new Size(147, 131);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin chỉnh sửa";
+            // 
+            // btnBoQua
+            // 
+            btnBoQua.Location = new Point(3, 108);
+            btnBoQua.Name = "btnBoQua";
+            btnBoQua.Size = new Size(141, 23);
+            btnBoQua.TabIndex = 10;
+            btnBoQua.Text = "Bỏ qua";
+            btnBoQua.UseVisualStyleBackColor = true;
+            btnBoQua.Click += btnBoQua_Click;
             // 
             // lblSoDongXoa
             // 
@@ -294,6 +309,16 @@
             rowContextMenu.Name = "contextMenuStrip1";
             rowContextMenu.Size = new Size(110, 26);
             // 
+            // btnKiemTra
+            // 
+            btnKiemTra.Location = new Point(3, 123);
+            btnKiemTra.Name = "btnKiemTra";
+            btnKiemTra.Size = new Size(75, 23);
+            btnKiemTra.TabIndex = 10;
+            btnKiemTra.Text = "Kiểm tra";
+            btnKiemTra.UseVisualStyleBackColor = true;
+            btnKiemTra.Click += btnKiemTra_Click;
+            // 
             // FileCleaningView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -337,5 +362,7 @@
         private Label lblSoDong;
         private ToolStripMenuItem undoDeleteMenuItem;
         private ContextMenuStrip rowContextMenu;
+        private Button btnBoQua;
+        private Button btnKiemTra;
     }
 }
